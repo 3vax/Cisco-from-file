@@ -33,12 +33,13 @@ pip install -r requirements.txt
 Tip: Always test your command file in a lab environment before applying changes to production.
 
 ## Project Structure
+```
 .
 ├── cisco_from_file/       # Main tool source code
 ├── requirements.txt       # Python dependencies
 ├── LICENSE                # GPL-3.0 license
 └── README.md              # Documentation (this file)
-
+```
 ## Potential Improvements
 
 - Support for running the same command file on multiple devices (batch mode)
