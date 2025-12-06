@@ -50,14 +50,15 @@ def get_commands_for_device(device_type, key_number):
     for command in commands:
         formatted_command = command.format()
         ser.write(formatted_command.encode())
-        
         if "crypto key generate rsa" in command.strip():
-            time.sleep(1)
-            for i in tqdm(range(20), desc="Waiting for key generation"):
-                time.sleep(0.2)
-            else:
-                time.sleep(1)
-    ser.close()
+            time.sleep(1) # wait for the device to respond                print(ser.read(ser.in_waiting or 1).decode())
+            for i in tqdm(range(40), desc="Waiting for key generation"):
+                    time.sleep(0.25)
+            print(ser.read(ser.in_waiting or 1).decode())
+        else:
+            time.sleep(1.5)
+            print(ser.read(ser.in_waiting or 1).decode()) # read all characters in buffer
+    ser.close() # close port
 
 if __name__ == "__main__":
     print(get_commands_for_device('routers', '4'))
