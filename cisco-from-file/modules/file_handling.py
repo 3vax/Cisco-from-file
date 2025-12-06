@@ -51,15 +51,16 @@ def get_commands_for_device(device_type, key_number):
         formatted_command = command.format()
         ser.write(formatted_command.encode())
         if "crypto key generate rsa" in command.strip():
-            time.sleep(1) # wait for the device to respond                print(ser.read(ser.in_waiting or 1).decode())
+            time.sleep(1) 
+            print(ser.read(ser.in_waiting or 1).decode())
             for i in tqdm(range(40), desc="Waiting for key generation"):
                     time.sleep(0.25)
             print(ser.read(ser.in_waiting or 1).decode())
         else:
             time.sleep(1.5)
-            print(ser.read(ser.in_waiting or 1).decode()) # read all characters in buffer
+            print(ser.read(ser.in_waiting or 1).decode())
     ser.close() # close port
 
 if __name__ == "__main__":
-    print(get_commands_for_device('routers', '4'))
-#    print(get_commands_for_device('switches', '2'))
+    print('This module is not meant to be run directly.')
+
