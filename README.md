@@ -26,16 +26,25 @@ pip install -r requirements.txt
 ## Usage
 1. Create a text file (for example commands.txt) containing the Cisco CLI commands you want to run — one per line.
 
-2. Run the script and provide the required parameters (device IP/hostname, credentials, and the command file).
+2. Add the command file to the correct folder depending on device type.
 
-3. The script will connect to the device, execute the commands in order, and exit.
+3. Connect to the device with a serial cable.
+
+4. Run the script and choose correct selection from menu and provide what com port to use.
+
+5. The script will connect to the device, execute the commands in order.
 
 Tip: Always test your command file in a lab environment before applying changes to production.
 
 ## Project Structure
 ```
 .
-├── cisco_from_file/       # Main tool source code
+├── cisco-from-file        # Project folder/
+│   ├── data                 # Folder data used/
+│   │   ├── routers            # Command folder for routers
+│   │   └── switches           # Command folder for switches
+│   ├── modules/             # Modules used in main.py
+│   └── main.py              # Main script
 ├── requirements.txt       # Python dependencies
 ├── LICENSE                # GPL-3.0 license
 └── README.md              # Documentation (this file)
