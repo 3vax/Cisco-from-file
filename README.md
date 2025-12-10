@@ -39,10 +39,10 @@ Tip: Always test your command file in a lab environment before applying changes 
 ## Project Structure
 ```
 .
-├── cisco-from-file        # Project folder/
-│   ├── data                 # Folder data used/
-│   │   ├── routers            # Command folder for routers
-│   │   └── switches           # Command folder for switches
+├── cisco-from-file/        # Project folder
+│   ├── data/                 # Folder data used
+│   │   ├── routers/            # Command folder for routers
+│   │   └── switches/           # Command folder for switches
 │   ├── modules/             # Modules used in main.py
 │   └── main.py              # Main script
 ├── requirements.txt       # Python dependencies
